@@ -17,3 +17,9 @@ Outputs:
     - An analysis summary printed to the console (including total record count and aggregated statistics).
     - A saved Matplotlib chart image (e.g., rocket_success_chart.png).
 """
+
+from bs4 import BeautifulSoup
+import matplotlib.pyplot as plt
+import pandas as pd
+from peewee import SqliteDatabase, Model, CharField, FloatField, IntegerField, BooleanField
+import requests, time
