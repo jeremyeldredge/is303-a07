@@ -48,16 +48,6 @@ def fetch_page(url):
     else:
         print(f"Failed to fetch {url}: status {response.status_code}")
         return None
-    
-def extract_quotes(soup):
-    results = []
-    for quote in soup.find_all("div",class_="quote"):
-        text = quote.find(class_="text").get_text(strip=True)
-        author = quote.find(class_="author").get_text(strip=True)
-        tags = [t.get_text(strip=True) for t in quote.find_all("a",class_="tag")]
-        for tag in tags:
-            results.append({"text":text, "author":author,"tag":tag})
-    return results
 
 def scrape_quotes(num_pages=3):
     """Scrape quote data from multiple pages."""
